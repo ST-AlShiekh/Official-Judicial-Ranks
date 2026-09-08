@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ministry of Justice | Judicial Audits Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="spy.css">
+<style>
+/* ممنوع التعديل فيه نهائيا لو سمحتم*/
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+  direction: rtl;
+}
+
+.archive-card {
+  background: rgba(15, 20, 30, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+  .archive-grid {
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .archive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.archive-card:hover {
+  border-color: rgba(212, 175, 55, 0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.archive-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.archive-num {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #d4af37;
+  opacity: 0.8;
+}
+
+.archive-badge-status {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.archive-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.archive-card p {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.audit-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
+  color: #111;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-family: 'Cairo', sans-serif;
+}
+
+.audit-action-btn:hover {
+  background: linear-gradient(135deg, #e6c555, #d4af37);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.audit-action-btn.disabled {
+  background: rgba(255, 255, 255, 0.05);
+  color: #666;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: not-allowed;
+}
+</style>
+</head>
+<body class="audit-page">
+<div class="ambient-bg audit-ambient"></div>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">⚖</div>
+    <div><strong>DOJ ARCHIVE</strong><span>Judicial Performance &amp; Reports</span></div>
+  </div>
+  <button class="ghost" onclick="location.href='index.html'">← العودة للرئيسية</button>
+</header>
+<div class="ambient-bg">
+  <canvas id="luxuryCanvas"></canvas>
+</div>
+<main class="container">
+  <section class="audit-hero" style="text-align: center; margin-bottom: 40px;">
+
+    <div class="audit-badge" style="display: inline-block; margin-bottom: 15px;">OFFICIAL REGISTRY</div>
+
+    <h1 style="font-size: 2.5rem; margin-bottom: 15px;">أرشيف جرد وزارة العدل<br><em style="color: #d4af37; font-family: 'Cinzel', serif;">Institutional Judicial Audits</em></h1>
+
+    <p style="max-width: 600px; margin: 0 auto;">السجل الرسمي الشامل لجميع التقارير والجرود الأسبوعية لقطاعات وزارة العدل مع مؤشرات الأداء والتقييمات التفصيلية.</p>
+    
+  </section>
+
+  <div class="archive-grid">
+    <!-- بطاقة الأسبوع الأول -->
+    <div class="archive-card">
+      <div>
+        <div class="archive-card-header">
+          <span class="archive-num">01</span>
+          <span class="archive-badge-status">معتمد رسمياً</span>
+        </div>
+        <h3>Week 01 Audit</h3>
+        <p>الفترة: 01 — 07 سبتمبر 2026<br>مراجعة شاملة لمدى إنجاز القضايا، مؤشرات التحقيقات النشطة، واعتماد الترقيات الأولى للقطاعات.</p>
+      </div>
+      <button class="audit-action-btn" onclick="location.href='audit-week-1.html'">
+        عرض تفاصيل الجرد <span>←</span>
+      </button>
+    </div>
+
+    <!-- بطاقة الأسبوع الثاني -->
+    <div class="archive-card">
+      <div>
+        <div class="archive-card-header">
+          <span class="archive-num">02</span>
+          <span class="archive-badge-status">معتمد رسمياً</span>
+        </div>
+        <h3>Week 02 Audit</h3>
+        <p>الفترة: 08 — 14 سبتمبر 2026<br>تقرير الأداء الدوري ومؤشرات العمل لقطاعات الوزارة ومتابعة القضايا المعلقة.</p>
+      </div>
+      <button class="audit-action-btn" onclick="location.href='audit-week-2.html'">
+        عرض تفاصيل الجرد <span>←</span>
+      </button>
+    </div>
+
+    <!-- بطاقة الأسبوع الثالث -->
+    <div class="archive-card" style="opacity: 0.75;">
+      <div>
+        <div class="archive-card-header">
+          <span class="archive-num">03</span>
+          <span class="archive-badge-status" style="background: rgba(255,255,255,0.05); color: #888; border-color: rgba(255,255,255,0.1);">قريباً</span>
+        </div>
+        <h3>Week 03 Audit</h3>
+        <p>الفترة: 15 — 21 سبتمبر 2026<br>سيتم نشر تقرير الأداء الأسبوعي ومراجعة الملفات فور اعتمادها من القيادة العليا.</p>
+      </div>
+      <button class="audit-action-btn disabled" disabled>
+        قريباً <span>🔒</span>
+      </button>
+    </div>
+
+    <!-- بطاقة الأسبوع الرابع -->
+    <div class="archive-card" style="opacity: 0.75;">
+      <div>
+        <div class="archive-card-header">
+          <span class="archive-num">04</span>
+          <span class="archive-badge-status" style="background: rgba(255,255,255,0.1); color: #888; border-color: rgba(255,255,255,0.1);">قريباً</span>
+        </div>
+        <h3>Week 04 Audit</h3>
+        <p>الفترة: 22 — 28 سبتمبر 2026<br>سيتم نشر تقرير الأداء الأسبوعي ومراجعة الملفات فور اعتمادها من القيادة العليا.</p>
+      </div>
+      <button class="audit-action-btn disabled" disabled>
+        قريباً <span>🔒</span>
+      </button>
+    </div>
+
+    <!-- بطاقة الأسبوع الخامس -->
+    <div class="archive-card" style="opacity: 0.75;">
+      <div>
+        <div class="archive-card-header">
+          <span class="archive-num">05</span>
+          <span class="archive-badge-status" style="background: rgba(255,255,255,0.1); color: #888; border-color: rgba(255,255,255,0.1);">قريباً</span>
+        </div>
+        <h3>Week 05 Audit</h3>
+        <p>الفترة: 29 سبتمبر — 05 أكتوبر 2026<br>سيتم نشر تقرير الأداء الأسبوعي ومراجعة الملفات فور اعتمادها من القيادة العليا.</p>
+      </div>
+      <button class="audit-action-btn disabled" disabled>
+        قريباً <span>🔒</span>
+      </button>
+    </div>
+  </div>
+</main>
+
+<footer style="text-align: center; margin-top: 60px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.05); color: #777; font-size: 0.85rem;">
+  Ministry of Justice • Judicial Archives • Confidential Internal Reference
+  <script>
+
+    const canvas = document.getElementById('luxuryCanvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+for (let i = 0; i < 40; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1.5 + 0.5,
+    speedX: (Math.random() - 0.5) * 0.2,
+    speedY: (Math.random() - 0.5) * 0.2,
+    alpha: Math.random() * 0.5 + 0.2
+  });
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.x += p.speedX;
+    p.y += p.speedY;
+    if (p.x < 0) p.x = canvas.width;
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y < 0) p.y = canvas.height;
+    if (p.y > canvas.height) p.y = 0;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(197, 165, 107, ${p.alpha})`;
+    ctx.shadowBlur = 8;
+    ctx.shadowColor = '#c5a56b';
+    ctx.fill();
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+
+  </script>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ministry of Justice | Ranks &amp; Promotion Criteria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="spy.css">
+</head>
+<body>
+<div class="ambient-bg"></div>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">⚖</div>
+    <div><strong>MINISTRY OF JUSTICE</strong><span>Official Ranks Promotion Directory</span></div>
+  </div>
+  <div class="header-meta"><span>Al-Shiekh</span><span class="dot"></span><span>Made By</span></div>
+</header>
+<div class="ambient-bg">
+  <canvas id="luxuryCanvas"></canvas>
+</div>
+<main class="container">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">DEPARTMENT OF JUDICIAL DEVELOPMENT</div>
+      <h1>Official Judicial Ranks<br><em>Promotion Criteria</em></h1>
+      <p>مرجع رسمي شامل لكل رتبة في وزارة العدل، مع بيان القطاع، المهام، الدرجات النجمية، والمعايير الصارمة المطلوبة للترقية.</p>
+      <div class="hero-actions">
+        <button class="primary" onclick="document.getElementById('rankTable').scrollIntoView({behavior:'smooth'})">Explore Ranks Directory</button>
+        <button class="ghost" onclick="openAudit()">Weekly Judicial Audit</button>
+      </div>
+    </div>
+    <button class="seal" aria-label="فتح الجرد الأسبوعي" onclick="openAudit()">
+      <span class="seal-ring">JUSTICE</span>
+      <span class="seal-icon">⚖</span><small>Weekly Audit</small>
+    </button>
+  </section>
+
+  <section class="stats">
+    <div><span>Total Ranks</span><b id="rankCount">0</b></div>
+    <div><span>Active Sectors</span><b>6</b></div>
+    <div><span>Star Tiers</span><b>5 Stars</b></div>
+    <div><span>Criteria Tiering</span><b>Strict Standard</b></div>
+  </section>
+
+  <section class="toolbar">
+    <div><label>General Search (بحث عام)</label><input id="search" placeholder="Search by rank name, sector, or duties..." oninput="render()"></div>
+    <div><label>Sector Filter (القطاع)</label><select id="sector" onchange="render()"><option value="">All Sectors (جميع القطاعات)</option></select></div>
+    <div><label>Star Tier (درجة النجوم)</label><select id="stars" onchange="render()"><option value="">All Tiers (جميع الدرجات)</option></select></div>
+  </section>
+
+  <section id="rankTable" class="registry">
+    <div class="section-head"><div><div class="eyebrow">OFFICIAL REGISTRY</div><h2>الهيكل التنظيمي والواجبات</h2></div><span id="resultCount"></span></div>
+    <div id="groups"></div>
+  </section>
+
+  <section class="standards">
+    <div class="section-head"><div><div class="eyebrow">PROMOTION PHILOSOPHY</div><h2>الترقية إنجازٌ يُكتسب، وليست هبة</h2></div></div>
+    <div class="standard-grid">
+      <article><b>01</b><h3>فترة الخدمة (Service Time)</h3><p>يجب إتمام الحد الأدنى من مدة الخدمة والخبرة الميدانية قبل قبول طلب الترقية.</p></article>
+      <article><b>02</b><h3>الأداء والمهام (Performance)</h3><p>تتم مراجعة القضايا، التحقيقات، وكفاءة إنجاز المهام الصعبة بدقة متناهية.</p></article>
+      <article><b>03</b><h3>الاختبارات (Examinations)</h3><p>يجب اجتياز الاختبارات التخصصية المقررة والدورات الأكاديمية بنجاح تام.</p></article>
+      <article><b>04</b><h3>الاعتماد النهائي (Final Approval)</h3><p>المناصب القيادية العليا تتطلب توصيات موثقة وموافقة رسمية من المجلس الأعلى.</p></article>
+    </div>
+  </section>
+</main>
+
+<footer>Ministry of Justice • Internal Official Reference • Ranks &amp; Promotions System</footer>
+<script src="spy.js"></script>
+</body>
+</html>
+
+
