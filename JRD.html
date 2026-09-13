@@ -1,0 +1,1794 @@
+
+<!DOCTYPE html> <html lang="ar" dir="rtl"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>وزارة العدل | التقرير الأسبوعي الأول</title>
+
+<style>
+    /* =========================================================
+       01 - GENERAL
+    ========================================================= */
+
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+    :root {
+        --brown-dark: #211108;
+        --brown: #32190d;
+        --brown-light: #4b2814;
+
+        --gold-dark: #9b783b;
+        --gold: #c9a45c;
+        --gold-light: #ead18c;
+
+        --cream: #f5efe4;
+        --white: #fffdf8;
+
+        --text: #29211b;
+        --muted: #75695d;
+
+        --border: rgba(50, 25, 13, 0.10);
+
+        --shadow:
+            0 20px 50px rgba(33, 17, 8, 0.12);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Cairo", Tahoma, sans-serif;
+        background:
+            radial-gradient(
+                circle at 10% 10%,
+                rgba(201, 164, 92, 0.14),
+                transparent 28%
+            ),
+            radial-gradient(
+                circle at 90% 90%,
+                rgba(201, 164, 92, 0.10),
+                transparent 30%
+            ),
+            var(--cream);
+
+        color: var(--text);
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* =========================================================
+       02 - HERO / HEADER
+    ========================================================= */
+
+    .hero {
+        position: relative;
+        overflow: hidden;
+
+        min-height: 590px;
+
+        padding: 45px 7% 80px;
+
+        color: white;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(25, 12, 6, 0.99),
+                rgba(72, 39, 20, 0.97)
+            );
+    }
+
+    .hero::before {
+        content: "";
+
+        position: absolute;
+
+        width: 700px;
+        height: 700px;
+
+        top: -350px;
+        left: -180px;
+
+        border: 1px solid rgba(234, 209, 140, 0.13);
+
+        border-radius: 50%;
+    }
+
+    .hero::after {
+        content: "";
+
+        position: absolute;
+
+        width: 520px;
+        height: 520px;
+
+        right: -200px;
+        bottom: -300px;
+
+        border: 1px solid rgba(234, 209, 140, 0.12);
+
+        border-radius: 50%;
+    }
+
+    /* =========================================================
+       03 - TOP BAR
+    ========================================================= */
+
+    .topbar {
+        position: relative;
+        z-index: 5;
+
+        max-width: 1300px;
+
+        margin: auto;
+
+        padding-bottom: 28px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .logo {
+        width: 76px;
+        height: 76px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        border: 2px solid var(--gold-light);
+
+        color: var(--gold-light);
+
+        font-size: 34px;
+
+        background:
+            radial-gradient(
+                circle,
+                rgba(234, 209, 140, 0.12),
+                transparent 65%
+            );
+
+        box-shadow:
+            0 0 0 7px rgba(201, 164, 92, 0.07),
+            0 0 35px rgba(201, 164, 92, 0.14);
+    }
+
+    .brand-text strong {
+        display: block;
+
+        color: var(--gold-light);
+
+        font-size: 21px;
+        font-weight: 900;
+    }
+
+    .brand-text span {
+        display: block;
+
+        margin-top: 3px;
+
+        color: #d9cec3;
+
+        font-size: 12px;
+    }
+
+    .status {
+        padding: 9px 18px;
+
+        border: 1px solid rgba(234, 209, 140, 0.35);
+
+        border-radius: 50px;
+
+        color: var(--gold-light);
+
+        font-size: 13px;
+
+        background:
+            rgba(255, 255, 255, 0.04);
+    }
+
+    /* =========================================================
+       04 - HERO CONTENT
+    ========================================================= */
+
+    .hero-content {
+        position: relative;
+        z-index: 5;
+
+        max-width: 1000px;
+
+        margin: 90px auto 0;
+
+        text-align: center;
+    }
+
+    .eyebrow {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        margin-bottom: 18px;
+
+        color: var(--gold-light);
+
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+        content: "";
+
+        width: 50px;
+        height: 1px;
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent,
+                var(--gold)
+            );
+    }
+
+    .eyebrow::after {
+        background:
+            linear-gradient(
+                90deg,
+                var(--gold),
+                transparent
+            );
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 7vw, 82px);
+
+        line-height: 1.15;
+
+        font-weight: 900;
+
+        letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+        color: var(--gold-light);
+    }
+
+    .hero-description {
+        max-width: 800px;
+
+        margin: 22px auto 0;
+
+        color: #ded3c8;
+
+        font-size: 16px;
+
+        line-height: 2.1;
+    }
+
+    .date-box {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 18px;
+
+        margin-top: 38px;
+
+        padding: 13px 25px;
+
+        border:
+            1px solid rgba(234, 209, 140, 0.30);
+
+        border-radius: 5px;
+
+        background:
+            rgba(255, 255, 255, 0.045);
+    }
+
+    .date-box strong {
+        color: var(--gold-light);
+    }
+
+    /* =========================================================
+       05 - MAIN CONTAINER
+    ========================================================= */
+
+    .container {
+        position: relative;
+        z-index: 10;
+
+        width: min(1250px, 90%);
+
+        margin: -50px auto 100px;
+    }
+
+    /* =========================================================
+       06 - STATISTICS
+    ========================================================= */
+
+    .stats {
+        display: grid;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 18px;
+    }
+
+    .stat {
+        position: relative;
+
+        padding: 28px 20px;
+
+        overflow: hidden;
+
+        text-align: center;
+
+        background: var(--white);
+
+        border: 1px solid var(--border);
+
+        border-radius: 8px;
+
+        box-shadow: var(--shadow);
+    }
+
+    .stat::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        right: 0;
+        left: 0;
+
+        height: 3px;
+
+        background:
+            linear-gradient(
+                90deg,
+                var(--gold-dark),
+                var(--gold-light),
+                var(--gold-dark)
+            );
+    }
+
+    .stat-icon {
+        color: var(--gold-dark);
+
+        font-size: 27px;
+
+        margin-bottom: 3px;
+    }
+
+    .stat-number {
+        display: block;
+
+        color: var(--brown);
+
+        font-size: 38px;
+
+        font-weight: 900;
+    }
+
+    .stat-label {
+        color: var(--muted);
+
+        font-size: 13px;
+    }
+
+    /* =========================================================
+       07 - SECTIONS
+    ========================================================= */
+
+    .section {
+        margin-top: 80px;
+    }
+
+    .section-header {
+        margin-bottom: 38px;
+
+        text-align: center;
+    }
+
+    .section-header .label {
+        color: var(--gold-dark);
+
+        font-size: 13px;
+
+        font-weight: 900;
+
+        letter-spacing: 1px;
+    }
+
+    .section-header h2 {
+        margin-top: 7px;
+
+        color: var(--brown);
+
+        font-size: 36px;
+
+        font-weight: 900;
+    }
+
+    .section-header p {
+        margin-top: 5px;
+
+        color: var(--muted);
+
+        font-size: 14px;
+    }
+
+    /* =========================================================
+       08 - ACHIEVEMENT CARDS
+    ========================================================= */
+
+    .achievements {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+    .achievement {
+        position: relative;
+
+        display: flex;
+
+        gap: 20px;
+
+        padding: 28px;
+
+        overflow: hidden;
+
+        background: var(--white);
+
+        border: 1px solid var(--border);
+
+        border-radius: 9px;
+
+        box-shadow:
+            0 12px 35px
+            rgba(43, 23, 13, 0.08);
+
+        transition:
+            transform .3s ease,
+            box-shadow .3s ease;
+    }
+
+    .achievement:hover {
+        transform: translateY(-5px);
+
+        box-shadow:
+            0 20px 45px
+            rgba(43, 23, 13, 0.14);
+    }
+
+    .achievement::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 4px;
+
+        background:
+            linear-gradient(
+                var(--gold),
+                var(--gold-light)
+            );
+    }
+
+    .achievement-number {
+        flex: 0 0 53px;
+
+        width: 53px;
+        height: 53px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        color: var(--gold-light);
+
+        font-size: 16px;
+
+        font-weight: 900;
+
+        background:
+            linear-gradient(
+                145deg,
+                var(--brown),
+                var(--brown-light)
+            );
+
+        box-shadow:
+            0 8px 20px
+            rgba(43, 23, 13, 0.20);
+    }
+
+    .achievement h3 {
+        color: var(--brown);
+
+        font-size: 18px;
+
+        font-weight: 900;
+
+        margin-bottom: 8px;
+    }
+
+    .achievement p {
+        color: #71655b;
+
+        font-size: 13.5px;
+
+        line-height: 2;
+    }
+
+    /* =========================================================
+       09 - FEATURE PANEL
+    ========================================================= */
+
+    .feature {
+        position: relative;
+
+        overflow: hidden;
+
+        padding: 48px;
+
+        color: white;
+
+        border-radius: 10px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(43, 23, 13, 0.99),
+                rgba(82, 46, 24, 0.97)
+            );
+
+        box-shadow: var(--shadow);
+    }
+
+    .feature::before {
+        content: "";
+
+        position: absolute;
+
+        width: 450px;
+        height: 450px;
+
+        left: -200px;
+        top: -200px;
+
+        border:
+            1px solid
+            rgba(234, 209, 140, 0.14);
+
+        border-radius: 50%;
+    }
+
+    .feature-content {
+        position: relative;
+        z-index: 2;
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 45px;
+
+        align-items: center;
+    }
+
+    .feature-label {
+        color: var(--gold-light);
+
+        font-size: 13px;
+
+        font-weight: 800;
+    }
+
+    .feature h2 {
+        margin: 8px 0 13px;
+
+        color: var(--gold-light);
+
+        font-size: 31px;
+
+        font-weight: 900;
+    }
+
+    .feature p {
+        color: #ded2c7;
+
+        font-size: 14px;
+
+        line-height: 2.1;
+    }
+
+    .quote {
+        padding: 17px 25px;
+
+        border-right:
+            3px solid var(--gold);
+
+        color: #f6ead8;
+
+        font-size: 18px;
+
+        font-weight: 700;
+
+        line-height: 2;
+    }
+
+    /* =========================================================
+       10 - TIMELINE
+    ========================================================= */
+
+    .timeline {
+        position: relative;
+
+        max-width: 900px;
+
+        margin: auto;
+    }
+
+    .timeline::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        right: 24px;
+        bottom: 0;
+
+        width: 2px;
+
+        background:
+            linear-gradient(
+                var(--gold),
+                rgba(201, 164, 92, 0.08)
+            );
+    }
+
+    .timeline-item {
+        position: relative;
+
+        padding-right: 65px;
+
+        margin-bottom: 32px;
+    }
+
+    .timeline-dot {
+        position: absolute;
+
+        top: 3px;
+        right: 14px;
+
+        width: 22px;
+        height: 22px;
+
+        border-radius: 50%;
+
+        border:
+            5px solid var(--gold-light);
+
+        background: var(--brown);
+
+        box-shadow:
+            0 0 0 5px
+            rgba(201, 164, 92, 0.12);
+    }
+
+    .timeline-item h3 {
+        color: var(--brown);
+
+        font-size: 16px;
+
+        font-weight: 900;
+
+        margin-bottom: 4px;
+    }
+
+    .timeline-item p {
+        color: var(--muted);
+
+        font-size: 13px;
+
+        line-height: 1.9;
+    }
+
+    /* =========================================================
+       11 - PDF BUTTON
+    ========================================================= */
+
+    .pdf-area {
+        display: flex;
+
+        justify-content: center;
+
+        margin-top: 70px;
+    }
+
+    .pdf-button {
+        position: relative;
+
+        min-width: 300px;
+
+        padding: 20px 35px;
+
+        overflow: hidden;
+
+        border: none;
+
+        border-radius: 6px;
+
+        cursor: pointer;
+
+        color: white;
+
+        font-family: "Cairo", sans-serif;
+
+        font-size: 16px;
+
+        font-weight: 900;
+
+        background:
+            linear-gradient(
+                135deg,
+                #69431d,
+                #b98f49,
+                #e4c375,
+                #805522
+            );
+
+        background-size: 300% 300%;
+
+        animation:
+            goldAnimation 4s ease infinite;
+
+        box-shadow:
+            0 12px 35px
+            rgba(139, 92, 40, 0.38),
+
+            0 0 30px
+            rgba(228, 199, 125, 0.16);
+
+        transition:
+            transform .3s ease,
+            box-shadow .3s ease;
+    }
+
+    .pdf-button:hover {
+        transform:
+            translateY(-4px)
+            scale(1.02);
+
+        box-shadow:
+            0 18px 45px
+            rgba(139, 92, 40, 0.45),
+
+            0 0 45px
+            rgba(228, 199, 125, 0.25);
+    }
+
+    .pdf-button::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+
+        right: -110%;
+
+        width: 70%;
+
+        height: 100%;
+
+        background:
+            linear-gradient(
+                110deg,
+                transparent,
+                rgba(255,255,255,.55),
+                transparent
+            );
+
+        animation:
+            buttonShine 2.7s infinite;
+    }
+
+    .pdf-button span {
+        position: relative;
+
+        z-index: 2;
+    }
+
+    @keyframes goldAnimation {
+        0%, 100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    @keyframes buttonShine {
+        0% {
+            right: -110%;
+        }
+
+        45%,
+        100% {
+            right: 150%;
+        }
+    }
+
+    /* =========================================================
+       12 - FOOTER
+    ========================================================= */
+
+    .footer {
+        margin-top: 75px;
+
+        padding: 35px;
+
+        text-align: center;
+
+        border-top:
+            1px solid
+            rgba(43, 23, 13, 0.10);
+
+        color: var(--muted);
+
+        font-size: 13px;
+    }
+
+    .footer-motto {
+        margin-bottom: 8px;
+
+        color: var(--gold-dark);
+
+        font-size: 14px;
+
+        font-weight: 900;
+    }
+
+    .footer strong {
+        color: var(--brown);
+
+        font-size: 15px;
+    }
+
+    /* =========================================================
+       13 - SCROLL ANIMATION
+    ========================================================= */
+
+    .reveal {
+        opacity: 0;
+
+        transform: translateY(25px);
+
+        transition:
+            opacity .7s ease,
+            transform .7s ease;
+    }
+
+    .reveal.visible {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+    /* =========================================================
+       14 - RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 950px) {
+
+        .stats {
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
+
+        .achievements {
+            grid-template-columns: 1fr;
+        }
+
+        .feature-content {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 650px) {
+
+        .hero {
+            padding:
+                30px 5% 70px;
+        }
+
+        .topbar {
+            flex-direction: column;
+
+            gap: 20px;
+
+            text-align: center;
+        }
+
+        .brand {
+            flex-direction: column;
+        }
+
+        .hero-content {
+            margin-top: 55px;
+        }
+
+        .hero h1 {
+            font-size: 43px;
+
+            letter-spacing: -1px;
+        }
+
+        .hero-description {
+            font-size: 14px;
+        }
+
+        .stats {
+            grid-template-columns: 1fr;
+        }
+
+        .container {
+            width: 92%;
+        }
+
+        .achievement {
+            padding: 22px 18px;
+        }
+
+        .feature {
+            padding: 30px 22px;
+        }
+
+        .quote {
+            font-size: 15px;
+        }
+
+        .pdf-button {
+            width: 100%;
+
+            min-width: 0;
+        }
+    }
+
+    /* =========================================================
+       15 - PRINT / PDF
+    ========================================================= */
+
+    @media print {
+
+        @page {
+            size: A4;
+
+            margin: 12mm;
+        }
+
+        body {
+            background: white;
+
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .hero {
+            min-height: auto;
+
+            padding: 35px;
+
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .hero-content {
+            margin-top: 45px;
+        }
+
+        .container {
+            width: 100%;
+
+            margin:
+                25px auto;
+        }
+
+        .pdf-area {
+            display: none;
+        }
+
+        .stat,
+        .achievement,
+        .feature {
+            box-shadow: none;
+
+            break-inside: avoid;
+
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .section {
+            break-inside: avoid;
+        }
+
+        .footer {
+            margin-top: 30px;
+        }
+
+        .reveal {
+            opacity: 1 !important;
+
+            transform: none !important;
+        }
+    }
+</style>
+
+</head> <body>
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="hero">
+
+    <div class="topbar">
+
+        <div class="brand">
+
+            <div class="logo">
+                ⚖
+            </div>
+
+            <div class="brand-text">
+
+                <strong>
+                    وزارة العدل
+                </strong>
+
+                <span>
+                    الإدارة العامة للشؤون العدلية والتنظيمية
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="status">
+            ● التقرير الأسبوعي 001
+        </div>
+
+    </div>
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            التقرير الإداري والعدلي
+        </div>
+
+        <h1>
+            جرد
+            <span>
+                الأسبوع الأول
+            </span>
+        </h1>
+
+        <p class="hero-description">
+
+            تقرير يستعرض أبرز الأعمال والإنجازات التنظيمية والعدلية
+            التي تم تنفيذها خلال الأسبوع الأول، وما نتج عنها من تطوير
+            للهيكل الإداري وتعزيز لدور وزارة العدل ومكانتها المؤسسية.
+
+        </p>
+
+        <div class="date-box">
+
+            <span>
+                الفترة
+            </span>
+
+            <strong>
+                الأسبوع الأول
+            </strong>
+
+            <span>
+                —
+            </span>
+
+            <span>
+                وزارة العدل
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="container">
+
+    <!-- =====================================================
+         STATISTICS
+    ===================================================== -->
+
+    <section class="stats">
+
+        <div class="stat reveal">
+
+            <div class="stat-icon">
+                ⚖
+            </div>
+
+            <strong
+                class="stat-number counter"
+                data-target="8">
+                0
+            </strong>
+
+            <span class="stat-label">
+                محاور إنجاز رئيسية
+            </span>
+
+        </div>
+
+        <div class="stat reveal">
+
+            <div class="stat-icon">
+                ◈
+            </div>
+
+            <strong
+                class="stat-number counter"
+                data-target="100">
+                0
+            </strong>
+
+            <span class="stat-label">
+                نسبة اكتمال التنظيم الإداري %
+            </span>
+
+        </div>
+
+        <div class="stat reveal">
+
+            <div class="stat-icon">
+                ✦
+            </div>
+
+            <strong
+                class="stat-number counter"
+                data-target="6">
+                0
+            </strong>
+
+            <span class="stat-label">
+                أقسام وتنظيمات مضافة
+            </span>
+
+        </div>
+
+        <div class="stat reveal">
+
+            <div class="stat-icon">
+                ✓
+            </div>
+
+            <strong
+                class="stat-number counter"
+                data-target="1">
+                0
+            </strong>
+
+            <span class="stat-label">
+                مرجعية عدلية موحدة
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+         ACHIEVEMENTS
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <div class="label">
+                أبرز المنجزات
+            </div>
+
+            <h2>
+                ملف الأعمال المنجزة
+            </h2>
+
+            <p>
+                أهم الملفات التي شهدت تقدماً وتنظيماً خلال الأسبوع الأول
+            </p>
+
+        </div>
+
+        <div class="achievements">
+
+            <article class="achievement reveal">
+
+                <div class="achievement-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>
+                        توسعة الكادر العدلي
+                    </h3>
+
+                    <p>
+                        قبول عدد كبير من المحامين وضم مجموعة من القضاة
+                        إلى منظومة وزارة العدل، بما يعزز القدرة على
+                        التعامل مع الملفات والقضايا ورفع مستوى الكفاءة
+                        العدلية.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="achievement reveal">
+
+                <div class="achievement-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>
+                        تعيين النائب العام
+                    </h3>
+
+                    <p>
+                        تعيين نائب عام وتحديد المسؤوليات والصلاحيات
+                        الموكلة إليه، بما يساهم في وضوح التسلسل الإداري
+                        وتوزيع الاختصاصات داخل المنظومة العدلية.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="achievement reveal">
+
+                <div class="achievement-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>
+                        تنظيم الجداول والدستور
+                    </h3>
+
+                    <p>
+                        إضافة الجداول التنظيمية والعمل على ترتيب وتنظيم
+                        الدستور الخاص بوزارة العدل، ليكون مرجعاً واضحاً
+                        للإجراءات والاختصاصات والأنظمة الداخلية.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="achievement reveal">
+
+                <div class="achievement-number">
+                    04
+                </div>
+
+                <div>
+
+                    <h3>
+                        الأكاديمية والشؤون والرتب
+                    </h3>
+
+                    <p>
+                        تنظيم المسارات الإدارية والتعليمية واستحداث إطار
+                        للأكاديمية والشؤون والرتب الإدارية والتنظيمية،
+                        بما يدعم بناء هيكل مؤسسي واضح ومنظم.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="achievement reveal">
+
+                <div class="achievement-number">
+                    05
+                </div>
+
+                <div>
+
+                    <h3>
+                        استحداث أقسام الوزارة
+                    </h3>
+
+                    <p>
+                        إضافة أقسام متخصصة داخل وزارة العدل وتوزيع المهام
+                        والاختصاصات، بما يرفع سرعة الإنجاز ويحد من تداخل
+                        المسؤوليات بين الإدارات.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="achievement reveal">
+
+                <div class="achievement-number">
+                    06
+                </div>
+
+                <div>
+
+                    <h3>
+                        استلام القضايا وتنفيذ الأحكام
+                    </h3>
+
+                    <p>
+                        تفعيل مسار استلام القضايا ومتابعتها والعمل على
+                        تنفيذ الأحكام الصادرة، مع تعزيز الجانب التنفيذي
+                        والعدلي للوزارة.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="achievement reveal">
+
+                <div class="achievement-number">
+                    07
+                </div>
+
+                <div>
+
+                    <h3>
+                        تعزيز مكانة وزارة العدل
+                    </h3>
+
+                    <p>
+                        رفع حضور وزارة العدل ومكانتها داخل المدينة
+                        وترسيخ صورتها كجهة عدلية ذات وزن مؤسسي، بما
+                        يعزز الرجوع إليها في الإجراءات ذات العلاقة.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="achievement reveal">
+
+                <div class="achievement-number">
+                    08
+                </div>
+
+                <div>
+
+                    <h3>
+                        تعزيز التعاون مع القطاعات
+                    </h3>
+
+                    <p>
+                        ضم عدد من العساكر إلى صف العدل وتوسيع قنوات
+                        التعاون مع الشؤون والقطاعات الأخرى، مما ساهم
+                        في بناء الثقة وتعزيز التنسيق المؤسسي.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+         FEATURE
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="feature reveal">
+
+            <div class="feature-content">
+
+                <div>
+
+                    <div class="feature-label">
+                        المكانة المؤسسية
+                    </div>
+
+                    <h2>
+                        العدل كمرجع رسمي
+                    </h2>
+
+                    <p>
+
+                        لم يقتصر العمل خلال الأسبوع الأول على الملفات
+                        الداخلية، بل امتد إلى بناء حضور مؤسسي واضح
+                        للوزارة وتعزيز اعتماد شعارها ومرجعيتها كجزء
+                        أساسي من المنظومة التنظيمية العامة.
+
+                    </p>
+
+                </div>
+
+                <div class="quote">
+
+                    «ترسيخ مرجعية العدل يبدأ من التنظيم،
+                    وينتهي بثقة القطاعات والمجتمع.»
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+         TIMELINE
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <div class="label">
+                مسار العمل
+            </div>
+
+            <h2>
+                قراءة سريعة للأسبوع
+            </h2>
+
+            <p>
+                التسلسل الذي ساهم في بناء المنظومة العدلية
+            </p>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <h3>
+                    بناء الكادر
+                </h3>
+
+                <p>
+                    توسيع صفوف الوزارة بالمحامين والقضاة وأصحاب
+                    الاختصاص.
+                </p>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <h3>
+                    تثبيت القيادة
+                </h3>
+
+                <p>
+                    تعيين النائب العام وتحديد المسؤوليات والصلاحيات.
+                </p>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <h3>
+                    تنظيم الهيكل
+                </h3>
+
+                <p>
+                    إضافة الأقسام والجداول والرتب والمسارات الإدارية.
+                </p>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <h3>
+                    تفعيل الاختصاص
+                </h3>
+
+                <p>
+                    استلام القضايا ومتابعة الأحكام وتعزيز الدور
+                    التنفيذي.
+                </p>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <h3>
+                    ترسيخ المرجعية
+                </h3>
+
+                <p>
+                    رفع حضور وزارة العدل وتعزيز التعاون والثقة مع
+                    القطاعات المختلفة.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+         PDF BUTTON
+    ===================================================== -->
+
+    <div class="pdf-area">
+
+        <button
+            id="pdfButton"
+            class="pdf-button"
+            type="button">
+
+            <span>
+                ⚖ &nbsp; تحميل تقرير العدل PDF
+            </span>
+
+        </button>
+
+    </div>
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-motto">
+            العدل أساس التنظيم — والتنظيم أساس الثقة
+        </div>
+
+        <strong>
+            وزارة العدل
+        </strong>
+
+        <div>
+            التقرير الإداري والعدلي — 001
+        </div>
+<div>Made By Al-Shiekh</div>
+    </footer>
+
+</main>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    /* =====================================================
+       01 - COUNTER ANIMATION
+    ===================================================== */
+
+    const counters =
+        document.querySelectorAll(".counter");
+
+    const counterObserver =
+        new IntersectionObserver(
+            function (entries, observer) {
+
+                entries.forEach(function (entry) {
+
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    const counter =
+                        entry.target;
+
+                    const target =
+                        Number(counter.dataset.target);
+
+                    const duration = 1200;
+
+                    const startTime =
+                        performance.now();
+
+                    function animate(currentTime) {
+
+                        const elapsed =
+                            currentTime - startTime;
+
+                        const progress =
+                            Math.min(
+                                elapsed / duration,
+                                1
+                            );
+
+                        const easing =
+                            1 -
+                            Math.pow(
+                                1 - progress,
+                                3
+                            );
+
+                        counter.textContent =
+                            Math.floor(
+                                target * easing
+                            );
+
+                        if (progress < 1) {
+
+                            requestAnimationFrame(
+                                animate
+                            );
+
+                        } else {
+
+                            counter.textContent =
+                                target;
+
+                        }
+                    }
+
+                    requestAnimationFrame(
+                        animate
+                    );
+
+                    observer.unobserve(counter);
+
+                });
+
+            },
+            {
+                threshold: 0.6
+            }
+        );
+
+    counters.forEach(function (counter) {
+
+        counterObserver.observe(counter);
+
+    });
+
+    /* =====================================================
+       02 - SCROLL REVEAL
+    ===================================================== */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+    const revealObserver =
+        new IntersectionObserver(
+            function (entries, observer) {
+
+                entries.forEach(function (entry) {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+    revealElements.forEach(function (element) {
+
+        revealObserver.observe(element);
+
+    });
+
+    /* =====================================================
+       03 - PDF / PRINT
+    ===================================================== */
+
+    const pdfButton =
+        document.getElementById("pdfButton");
+
+    pdfButton.addEventListener(
+        "click",
+        function () {
+
+            const originalHTML =
+                pdfButton.innerHTML;
+
+            pdfButton.innerHTML =
+                "<span>⏳ جاري تجهيز التقرير...</span>";
+
+            pdfButton.disabled = true;
+
+            setTimeout(
+                function () {
+
+                    window.print();
+
+                    setTimeout(
+                        function () {
+
+                            pdfButton.innerHTML =
+                                originalHTML;
+
+                            pdfButton.disabled =
+                                false;
+
+                        },
+                        1000
+                    );
+
+                },
+                500
+            );
+
+        }
+    );
+
+</script>
